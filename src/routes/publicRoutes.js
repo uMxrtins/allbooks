@@ -25,7 +25,7 @@ server.post('/registrar', async (req, res) => {
 
         };
 
-
+        
         const json = JSON.parse(data.toString());
 
         const last_item_id = json.usuarios.length > 0 ? json.usuarios[json.usuarios.length - 1].id : 0;
