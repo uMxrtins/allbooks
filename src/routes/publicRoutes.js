@@ -6,7 +6,7 @@ const { emailExiste, usuarioExiste } = require('../services/userService')
 const { createToken } = require('../services/authService')
 let { userDB } = require('../config/database')
 
-server.post('/cadastrar', async (req, res) => {
+server.post('/registrar', async (req, res) => {
     const { email, senha, nome, endereco, complemento, cep } = req.body;
 
     if (emailExiste(email)) {
@@ -25,7 +25,7 @@ server.post('/cadastrar', async (req, res) => {
 
         };
 
-
+        
         const json = JSON.parse(data.toString());
 
         const last_item_id = json.usuarios.length > 0 ? json.usuarios[json.usuarios.length - 1].id : 0;
